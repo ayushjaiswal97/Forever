@@ -48,6 +48,10 @@ const Collection = () => {
     applyFilter();
   },[category, subCategory])
 
+  useEffect(()=>{
+    setFilterProducts(products);
+  },[products])
+
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* Filter Options */}
@@ -73,6 +77,15 @@ const Collection = () => {
             </p>
             <p className="flex gap-2">
               <input className="w-3" type="checkbox" value={"Kids"} onChange={toggleCategory}/>
+              <input className="w-3" type="checkbox" value={"Men"} />
+              Men
+            </p>
+            <p className="flex gap-2">
+              <input className="w-3" type="checkbox" value={"Women"} />
+              Women
+            </p>
+            <p className="flex gap-2">
+              <input className="w-3" type="checkbox" value={"Kids"} />
               Kids
             </p>
           </div>
@@ -94,6 +107,15 @@ const Collection = () => {
             </p>
             <p className="flex gap-2">
               <input className="w-3" type="checkbox" value={"Winterwear"} onChange={toggleSubCategory}/>
+              <input className="w-3" type="checkbox" value={"Topwear"} />
+              Topwear
+            </p>
+            <p className="flex gap-2">
+              <input className="w-3" type="checkbox" value={"Bottomwear"} />
+              Bottomwear
+            </p>
+            <p className="flex gap-2">
+              <input className="w-3" type="checkbox" value={"Winterwear"} />
               Winterwear
             </p>
           </div>
